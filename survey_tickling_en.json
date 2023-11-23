@@ -1,0 +1,47 @@
+{
+  "data": {
+    "_id": "",
+    "type": "tickling",
+    "title": "",
+    "subTitle": "",
+    "description": "On scale from 0 (no itch) to 10 (worst imaginable itch), select the level of itching.",
+    "completeMessage": "Thank you for your response. Please participate again tomorrow.",
+    "data": [
+      {
+        "question": "How was your itch, <b>on average<b>, within the past 24 hours? \nPlease select one number.",
+        "answer": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "selectType": "scroll"
+      },
+      {
+        "question": "How was your <b>worst<b> itch in the past 24 hours?\nPlease select one number.",
+        "answer": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "selectType": "scroll"
+      }
+    ]
+  },
+  "message": "OK"
+}
