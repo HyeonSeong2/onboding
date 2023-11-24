@@ -1,3 +1,4 @@
+import 'package:first/screen/home_screen.dart';
 import 'package:first/screen/survey/components/survey_bottom_btn.dart';
 import 'package:first/util/constant.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,13 @@ class SurveySucessScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 24, right: 24, bottom: 40),
         child: SurveyBottomBtn(
           text: '확인',
-          textColor: whiteColor,
+          textColor: white,
           backgroundColor: ihpColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                (route) => false);
+          },
         ),
       ),
     );

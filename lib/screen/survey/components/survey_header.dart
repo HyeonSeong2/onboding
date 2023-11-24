@@ -26,9 +26,8 @@ class SurveyHeader extends StatelessWidget {
             child: Text.rich(
               TextSpan(
                 children: [
-                  //isEven은 짝수 판별.
-                  //0,1,2,3
                   ...List.generate(question.length, (index) {
+                    // index가 홀수 일 경우 파란색 표시
                     if (!index.isEven) {
                       // "<b>"를 포함한 부분은 파란색으로 스타일을 지정
                       return TextSpan(
@@ -45,7 +44,7 @@ class SurveyHeader extends StatelessWidget {
                       return TextSpan(
                         text: question[index],
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: gray90,
                           fontSize: 20,
                           height: 1.2,
                           fontWeight: FontWeight.w700,

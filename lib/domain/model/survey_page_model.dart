@@ -30,6 +30,8 @@ class SurveyPageModel {
     return "";
   }
 
+  //<b>를 기준으로 split
+  // 123<b>456<b>789  = ['123','456',789']
   List<String> getQuestionSplit() {
     var split = question.split("<b>");
     return split;

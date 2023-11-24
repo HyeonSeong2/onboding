@@ -1,21 +1,31 @@
+import 'package:first/domain/model/survey_model.dart';
+import 'package:first/domain/model/survey_page_model.dart';
+import 'package:first/screen/survey/survey_view_model.dart';
+import 'package:first/util/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
+import 'package:logger/logger.dart';
 
 class CustomWheelScroll extends StatefulWidget {
-  const CustomWheelScroll({super.key});
-
+  const CustomWheelScroll({required this.vm, super.key});
+  final SurveyViewModel vm;
   @override
   State<CustomWheelScroll> createState() => _CustomWheelScrollState();
 }
 
 class _CustomWheelScrollState extends State<CustomWheelScroll> {
-  final List<int> survyValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  late int selectValue = 5;
-
-  late final FixedExtentScrollController _controller;
-
+  //선택한 값을 담을 변수
+  late FixedExtentScrollController _controller;
+  SurveyViewModel get vm => widget.vm;
   @override
   void initState() {
-    _controller = FixedExtentScrollController(initialItem: selectValue - 1);
+    if (vm.selectValue[vm.pageNum] == null) {
+      vm.selectValue[vm.pageNum] =
+          (vm.surveyModel!.data[vm.pageNum - 1].answer.length / 2).floor();
+    }
+    _controller =
+        FixedExtentScrollController(initialItem: vm.selectValue[vm.pageNum]!);
+    Logger().d("vm.selectValue[vm.pageNum]! :${vm.selectValue[vm.pageNum]!}");
     super.initState();
   }
 
@@ -52,26 +62,27 @@ class _CustomWheelScrollState extends State<CustomWheelScroll> {
               squeeze: 1.2,
               itemExtent: 107,
               perspective: 0.0001,
+              onSelectedItemChanged: (index) {
+                setState(() {
+                  vm.selectValue[widget.vm.pageNum] = index;
+                  print('select value check ${vm.selectValue}');
+                });
+              },
               children: List.generate(
-                survyValue.length,
-                (index) => Center(
+                  vm.surveyModel!.data[vm.pageNum - 1].answer.length, (index) {
+                bool selected = vm.selectValue[vm.pageNum] == index;
+                return Center(
                   child: Text(
-                    "${survyValue[index]}",
+                    //answer index
+                    vm.surveyModel!.data[vm.pageNum - 1].answer[index],
                     style: TextStyle(
                         fontSize: 56,
                         fontWeight: FontWeight.w700,
-                        color: selectValue == survyValue[index]
-                            ? Color(0xff0F66CE)
-                            : Color(0xff808080)),
+                        //선택한 값과 현재의 값이 같다면 blue
+                        color: selected ? ihpColor : gray90),
                   ),
-                ),
-              ),
-              onSelectedItemChanged: (index) {
-                print('select value ${survyValue[index]}');
-                setState(() {
-                  selectValue = survyValue[index];
-                });
-              },
+                );
+              }),
             ),
           ),
         ],

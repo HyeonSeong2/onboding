@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 ///Color
 const Color ihpColor = Color(0xff0F66CE);
 const Color gray40 = Color(0xffAAAAAA);
-const Color whiteColor = Color(0xffffffff);
-const Color gray90Color = Color(0xff1E1E1E);
+const Color white = Color(0xffffffff);
+const Color gray90 = Color(0xff1E1E1E);
 
 ///Text Style
 
 const TextStyle introTextStyle =
-    TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: gray90Color);
+    TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: gray90);
 
-const TextStyle commentStyle =
+const TextStyle surveyHeaderText =
     TextStyle(fontSize: 20, fontWeight: FontWeight.w700);
 
 const TextStyle pageNationTextStyle =

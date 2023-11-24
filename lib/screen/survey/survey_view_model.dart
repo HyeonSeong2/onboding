@@ -33,10 +33,15 @@ class SurveyViewModel extends ChangeNotifier {
   }
 
   Future<void> next() async {
+    Logger().d("next 실행");
     if (pageNum >= surveyModel!.data.length) {
+      print("pageNum ${pageNum}");
+      print("pageValue ${selectValue[pageNum]}");
       return;
     } else {
       pageNum++;
+      print("pageNum ${pageNum}");
+      print("pageValue ${selectValue[pageNum]}");
     }
   }
 
@@ -45,11 +50,14 @@ class SurveyViewModel extends ChangeNotifier {
       return;
     } else {
       pageNum--;
+      print("pageNum ${pageNum}");
+      print("pageValue ${selectValue[pageNum]}");
     }
   }
 
   //데이터 저장
-  Future<void> add({required int page, required int answer}) async {
-    selectValue[page] = answer;
+  Future<void> add() async {
+    print("서버 POST api 호출");
+    print("selectValue : ${selectValue}");
   }
 }

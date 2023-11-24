@@ -1,4 +1,5 @@
 import 'package:first/methodCenel/method_channel_screen.dart';
+import 'package:first/screen/home_screen.dart';
 import 'package:first/screen/survey/survy_intro_screen.dart';
 import 'package:first/stream/multiple_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,6 +36,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: SurveyIntroScreen(),
+      //home: MethodChannelScreen(),
     );
   }
 }
