@@ -99,9 +99,6 @@ class _SurveyScreenState extends State<SurveyScreen> {
                     vm.back(() {
                       setState(() {});
                     });
-                    // setState(() {
-                    //   vm.back();
-                    // });
                   }),
             ),
             SizedBox(width: 8),

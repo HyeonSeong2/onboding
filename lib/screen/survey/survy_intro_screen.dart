@@ -39,9 +39,9 @@ class _SurveyIntroScreenState extends State<SurveyIntroScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // if (vm == null) {
-    //   return Center(child: CircularProgressIndicator());
-    // }
+    if (vm == null) {
+      return Center(child: CircularProgressIndicator());
+    }
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
