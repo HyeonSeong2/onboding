@@ -45,7 +45,7 @@ class SurveyViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> back() async {
+  Future<void> back(VoidCallback callBack) async {
     if (pageNum <= 1) {
       return;
     } else {

@@ -62,10 +62,15 @@ class _SurveyScreenState extends State<SurveyScreen> {
             child: PageView.builder(
               physics: NeverScrollableScrollPhysics(),
               controller: pageController,
+              // 스와이프 페이지 이동 없앰.
               onPageChanged: (value) {
-                setState(() {
-                  vm.pageNum = value + 1;
-                });
+                if (value == vm.pageNum) {
+                  Logger().d("$value + setState호출");
+                  setState(() {});
+                }
+                // setState(() {
+                //   vm.pageNum = value + 1;
+                // });
               },
               itemCount: vm.surveyModel!.data.length,
               itemBuilder: (context, index) => Column(
@@ -90,10 +95,13 @@ class _SurveyScreenState extends State<SurveyScreen> {
                   textColor: gray40,
                   backgroundColor: white,
                   onPressed: () {
-                    setState(() {
-                      vm.back();
-                      pageController.jumpToPage(vm.pageNum);
+                    pageController.jumpToPage(vm.pageNum);
+                    vm.back(() {
+                      setState(() {});
                     });
+                    // setState(() {
+                    //   vm.back();
+                    // });
                   }),
             ),
             SizedBox(width: 8),
