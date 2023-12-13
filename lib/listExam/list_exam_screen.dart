@@ -1,14 +1,15 @@
 import 'dart:html';
 
-import 'package:example/listExam/exam_list.dart';
-import 'package:example/listExam/list_enum.dart';
-import 'package:example/listExam/list_footer.dart';
-import 'package:example/listExam/list_header.dart';
-import 'package:example/listExam/list_item1.dart';
-import 'package:example/listExam/list_item2.dart';
-import 'package:example/listExam/list_item3.dart';
-import 'package:example/util/pair.dart';
+import 'package:first/listExam/exam_list.dart';
+import 'package:first/listExam/list_enum.dart';
+import 'package:first/listExam/list_footer.dart';
+import 'package:first/listExam/list_item1.dart';
+import 'package:first/listExam/list_item2.dart';
+import 'package:first/listExam/list_item3.dart';
+import 'package:first/util/pair.dart';
 import 'package:flutter/material.dart';
+
+import 'list_header.dart';
 
 class ListExamScreen extends StatefulWidget {
   const ListExamScreen({Key? key}) : super(key: key);
@@ -27,11 +28,11 @@ class _ListExamScreenState extends State<ListExamScreen> {
       } else if (data.first == ListEnum.footer) {
         parents.add(ListChild(const SizedBox(), ListEnum.footer));
       } else if (data.first == ListEnum.item1) {
-        parents.add(ListChild(ListItem1(value: data.second), ListEnum.item1));
+        parents.add(ListChild(ListItem1(data.second), ListEnum.item1));
       } else if (data.first == ListEnum.item2) {
-        parents.add(ListChild(ListItem2(value: data.second), ListEnum.item2));
+        parents.add(ListChild(ListItem2(data.second), ListEnum.item2));
       } else {
-        parents.add(ListChild(ListItem3(value: data.second), ListEnum.item3));
+        parents.add(ListChild(ListItem3(data.second), ListEnum.item3));
       }
     }
   }

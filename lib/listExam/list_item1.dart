@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListHeader extends StatelessWidget {
-  const ListHeader(this.value, {super.key});
+class ListItem1 extends StatelessWidget {
+  const ListItem1(this.value, {super.key});
   final value;
   @override
   Widget build(BuildContext context) {

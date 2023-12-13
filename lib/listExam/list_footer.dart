@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListHeader extends StatelessWidget {
-  const ListHeader({super.key});
+class ListFooter extends StatelessWidget {
+  const ListFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
