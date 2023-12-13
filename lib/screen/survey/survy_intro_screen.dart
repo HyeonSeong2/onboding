@@ -22,7 +22,9 @@ class _SurveyIntroScreenState extends State<SurveyIntroScreen> {
   void initState() {
     //ViewModel의 notifyListeners 호출 리스너
     listener = () {
-      setState(() {});
+      setState(() {
+        Logger().d("SetState 호출");
+      });
     };
     vm.addListener(listener!);
     //데이터 초기화

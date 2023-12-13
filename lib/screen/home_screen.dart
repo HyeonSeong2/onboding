@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 
 // 두가지로 구분을 지을 수 있음.
 // 레이아웃 위젯 : 형태 및 간격을 잡는 위젯
-// child가 없는 위젯 :
 class _HomeScreenState extends State<HomeScreen> {
   // 인스턴스 : 생성자를 생성해서 메모리에 올리는 것
   @override

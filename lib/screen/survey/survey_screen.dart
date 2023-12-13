@@ -40,13 +40,13 @@ class _SurveyScreenState extends State<SurveyScreen> {
   //   super.initState();
   // }
 
-  @override
-  void dispose() {
-    //리스너 메모리 해제
-    pageController.dispose();
-    // vm.removeListener(listener!);
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   //리스너 메모리 해제
+  //   pageController.dispose();
+  //   // vm.removeListener(listener!);
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

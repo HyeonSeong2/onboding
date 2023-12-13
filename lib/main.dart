@@ -1,3 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:first/eventChannel/event_channel_screen.dart';
+import 'package:first/listExam/list_exam_screen.dart';
 import 'package:first/methodCenel/method_channel_screen.dart';
 import 'package:first/screen/home_screen.dart';
 import 'package:first/screen/survey/survy_intro_screen.dart';
@@ -35,8 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: SurveyIntroScreen(),
-      //home: MethodChannelScreen(),
+      home: ListExamScreen(),
     );
   }
 }
