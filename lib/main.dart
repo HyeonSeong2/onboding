@@ -1,10 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:first/eventChannel/event_channel_screen.dart';
 import 'package:first/listExam/list_exam_screen.dart';
-import 'package:first/methodCenel/method_channel_screen.dart';
-import 'package:first/screen/home_screen.dart';
-import 'package:first/screen/survey/survy_intro_screen.dart';
-import 'package:first/stream/multiple_screen.dart';
+import 'package:first/valueNotifier/value_notifier_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,8 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
 
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
@@ -38,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ListExamScreen(),
+      home: ValueNotifierScreen(),
     );
   }
 }
